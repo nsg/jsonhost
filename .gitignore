@@ -1,0 +1,6 @@
+/target
+
+# Workspace infrastructure (not part of the project)
+/.claude/
+/.claude-sandbox/
+/.mcp.json

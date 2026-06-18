@@ -1,0 +1,20 @@
+[Unit]
+Description=jsonhost - JSON document store backed by stathost
+After=network.target
+
+[Service]
+Type=simple
+User=jsonhost
+Group=jsonhost
+ExecStart=/usr/local/bin/jsonhost --config /etc/jsonhost/jsonhost.toml
+Restart=on-failure
+RestartSec=5
+
+# Security hardening (jsonhost is stateless — no writable paths needed)
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
