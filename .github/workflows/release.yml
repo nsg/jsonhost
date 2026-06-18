@@ -187,10 +187,11 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Download all artifacts
+      - name: Download release artifacts
         uses: actions/download-artifact@v4
         with:
           path: artifacts
+          pattern: jsonhost-*
 
       - name: Create GitHub Release
         env:
